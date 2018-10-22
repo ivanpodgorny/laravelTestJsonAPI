@@ -1,4 +1,4 @@
-# Тестовы CRUD и API на Laravel
+# Тестовый CRUD и API на Laravel
 
 ## Запуск
 1. Выполнить ```cp .env.example .env```
