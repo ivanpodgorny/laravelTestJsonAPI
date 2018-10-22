@@ -1,8 +1,9 @@
 # Тестовы CRUD и API на Laravel
 
 ## Запуск
-1. Указать данные для подключения к БД в .env
-2. Выполнить 
+1. Выполнить ```cp .env.example .env```
+2. Указать данные для подключения к БД в .env
+3. Выполнить 
 ```
 composer update
 php artisan migrate
