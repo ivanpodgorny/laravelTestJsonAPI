@@ -25,7 +25,7 @@ class NewsController extends Controller
      */
     public function index(): JsonResponse
     {
-        return response()->json($this->news->all()->toArray());
+        return response()->json($this->news->all());
     }
 
     /**
@@ -37,7 +37,7 @@ class NewsController extends Controller
     public function store(News $request): JsonResponse
     {
         $inserted = $this->news->create($request);
-        return response()->json($inserted->toArray());
+        return response()->json($inserted);
     }
 
     /**
@@ -48,7 +48,7 @@ class NewsController extends Controller
      */
     public function show(int $id): JsonResponse
     {
-        return response()->json($this->news->find($id)->toArray());
+        return response()->json($this->news->find($id));
     }
 
     /**
@@ -61,7 +61,7 @@ class NewsController extends Controller
     public function update(News $request, int $id): JsonResponse
     {
         $updated = $this->news->update($id, $request);
-        return response()->json($updated->toArray());
+        return response()->json($updated);
     }
 
     /**
