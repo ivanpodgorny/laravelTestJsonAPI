@@ -67,8 +67,9 @@ class NewsController extends Controller
     /**
      * Удаляет новость по ID
      *
-     * @param  int  $id
+     * @param  int $id
      * @return JsonResponse
+     * @throws \Exception
      */
     public function destroy(int $id): JsonResponse
     {

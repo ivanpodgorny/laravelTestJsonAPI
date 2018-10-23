@@ -68,6 +68,7 @@ class NewsService
      *
      * @param int $id ID новости
      * @return bool True, если новость удалена
+     * @throws \Exception
      */
     public function destroy(int $id): bool
     {

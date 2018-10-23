@@ -7,13 +7,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 class NewsRepository
 {
-    /** @var News Модель */
-    protected $model;
-
-    public function __construct(News $news)
-    {
-        $this->model = $news;
-    }
+    /** @var string Класс модели */
+    protected $model = News::class;
 
     /**
      * Возвращает список новостей
@@ -34,8 +29,7 @@ class NewsRepository
     public function create(array $input): News
     {
         /** @var News $model */
-        $class = \get_class($this->model);
-        $model = new $class();
+        $model = new $this->model();
         $model->fill($input);
         $model->save();
 
@@ -74,16 +68,11 @@ class NewsRepository
      *
      * @param int $id ID новости
      * @return bool True, если новость удалена
+     * @throws \Exception
      */
     public function destroy(int $id): bool
     {
-        try {
-            $delete = $this->find($id)->delete();
-        } catch (\Exception $e) {
-            return false;
-        }
-
-        return $delete;
+        return $this->find($id)->delete();
     }
 
 }
